@@ -1,5 +1,5 @@
 --- configure.ac.keep	2015-12-28 22:08:31.054969617 +0200
-+++ configure.ac	2015-12-28 22:15:09.613521558 +0200
++++ configure.ac	2015-12-28 23:11:51.742744283 +0200
 @@ -33,7 +33,7 @@
      [Set CUDA install dir @<:@]m4_default(/usr/local/cuda/)[@:>@]
    ),
@@ -9,8 +9,12 @@
  )
  
  
-@@ -105,9 +105,9 @@
-   NVCC="${cuda_home}/bin/nvcc -gencode arch=compute_13,code=sm_13"
+@@ -102,12 +102,12 @@
+   AC_PROG_CXX([${cuda_home}/bin/nvcc])
+   AC_LANG([C++])
+   
+-  NVCC="${cuda_home}/bin/nvcc -gencode arch=compute_13,code=sm_13"
++  NVCC="${cuda_home}/bin/nvcc -gencode arch=compute_20,code=sm_20"
    
    RTH_CPPFLAGS="-DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_BACKEND_CUDA"
 -  RTH_LDFLAGS="-L${cuda_home}/lib/ -lcuda -lcudart"

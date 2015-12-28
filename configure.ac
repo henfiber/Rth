@@ -102,7 +102,7 @@ elif test "X${BACKEND}" = "XCUDA"; then
   AC_PROG_CXX([${cuda_home}/bin/nvcc])
   AC_LANG([C++])
   
-  NVCC="${cuda_home}/bin/nvcc -gencode arch=compute_13,code=sm_13"
+  NVCC="${cuda_home}/bin/nvcc -gencode arch=compute_20,code=sm_20"
   
   RTH_CPPFLAGS="-DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_BACKEND_CUDA"
   RTH_LDFLAGS="-L${cuda_home}/lib64/ -lcuda -lcudart"
